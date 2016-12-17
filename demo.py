@@ -28,7 +28,7 @@ ws_model['robot_radius'] = 0.2
 #initialization for robot 
 # position of [x,y,z]
 num=7
-X = [[-0.5+1.0*i, 0.0, 0.0] for i in range(num)] + [[-0.5+1.0*i, 5.0, 0.0] for i in range(num)]
+X = [[-0.5+1.0*i, 0.0, 0.0] for i in range(num)] + [[-0.5+1.0*i, 5.0, 1.0] for i in range(num)]
 # velocity of [vx,vy,vz]
 # Default as zero vectors
 V = [[0,0,0] for i in xrange(len(X))]
@@ -36,12 +36,12 @@ V = [[0,0,0] for i in xrange(len(X))]
 # TODO: What is default velocity for our Position Handler?
 V_max = [1.0 for i in xrange(len(X))]
 # goal of [x,y,z]
-goal = [[5.5-1.0*i, 5.0, 0.0] for i in range(num)] + [[5.5-1.0*i, 0.0, 0.0] for i in range(num)]
+goal = [[5.5-1.0*i, 5.0, 1.0] for i in range(num)] + [[5.5-1.0*i, 0.0, 0.0] for i in range(num)]
 
 #------------------------------
 #simulation setup
 # total simulation time (s)
-total_time = 15
+total_time = 10
 # simulation step
 step = 0.05
 #------------------------------
@@ -58,8 +58,10 @@ while t*step < total_time:
         X[i][0] += V[i][0]*step
         X[i][1] += V[i][1]*step
         X[i][2] += V[i][2]*step
+        print 'z='+str(X[i][2])
         residue += distance_3d(X[i],goal[i])
     print "residue"+str(residue)
+    print "-----------------------"
 #    #----------------------------------------
 #    # visualization
 #    if t%10 == 0:
