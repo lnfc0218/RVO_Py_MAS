@@ -10,12 +10,12 @@
 
 ### For Now:
 
- -[ ]3D simulation & visualization with `matplotlib`;
- -[ ]re-factor loops involving `NumPy` to avoid dependencies!
- -[ ]fine-tune parameters to integrate with [PositionHandler](https://github.com/jolilj/el2425_bitcraze/blob/master/scripts/position_handler.py);
- -[ ]add boundaries;
- -[ ]present RVO algorithm to teammates;
- -[ ]write reports on RVO.
+- [ ] 3D simulation & visualization with `matplotlib`;
+- [ ] re-factor loops involving `NumPy` to avoid dependencies!
+- [ ] fine-tune parameters to integrate with [PositionHandler](https://github.com/jolilj/el2425_bitcraze/blob/master/scripts/position_handler.py);
+- [ ] add boundaries;
+- [ ] present RVO algorithm to teammates;
+- [ ] write reports on RVO.
  
 ### For Future:
 
