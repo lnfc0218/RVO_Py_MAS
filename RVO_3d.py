@@ -159,7 +159,7 @@ def compute_V_des_3d(X, goal, V_max):
         dif_x = [goal[i][k]-X[i][k] for k in xrange(3)]
 #        print 'dif_x='+str(dif_x)
         norm = distance_3d(dif_x)
-        norm_dif_x = [dif_x[k]*V_max[k]/norm for k in xrange(3)]
+        norm_dif_x = [dif_x[k]*V_max/norm for k in xrange(3)]
 #        print 'norm_dif_x='+str(norm_dif_x)
         V_des.append(norm_dif_x[:])
         if reach(X[i], goal[i], 0.01):# We want our mini drones to go really close to final destination right?
