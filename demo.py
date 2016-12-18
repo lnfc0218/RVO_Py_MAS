@@ -38,7 +38,8 @@ X = [[-0.5+1.0*i, 0.0, 0.0] for i in range(num)] + [[-0.5+1.0*i, 5.0, 1.0] for i
 V = [[0,0,0] for i in xrange(len(X))]
 # maximal velocity norm
 # TODO: What is default velocity for our Position Handler?
-V_max = [1.0 for i in xrange(len(X))]
+# V_max = [1.0 for i in xrange(len(X))]
+V_max = 1.0
 # goal of [x,y,z]
 goal = [[5.5-1.0*i, 5.0, 1.0] for i in range(num)] + [[5.5-1.0*i, 0.0, 0.0] for i in range(num)]
 
