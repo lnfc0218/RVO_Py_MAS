@@ -1,7 +1,4 @@
-from math import sqrt
-import numpy
-
-from math import cos, sin, atan2, asin, acos
+from math import cos, sin, atan2, asin, acos, sqrt
 
 from math import pi as PI
 
@@ -110,13 +107,19 @@ def intersect_3d(pA, vA):
     step = 0.5 # radian step, can be bigger for faster computations
     azim_range = 2*PI*gear
     # TODO: change for loops into while loops so that we do not need to use NumPy
-    for azim in numpy.arange(0, azim_range, step):# loops over azimuth
-        for zen in numpy.arange(0, PI, step):
+#    for azim in numpy.arange(0, azim_range, step):# loops over azimuth
+    azim=0
+    while azim<azim_range:
+        zen=0
+        while zen<PI:
+#        for zen in numpy.arange(0, PI, step):
         # draw radian in spiral to save one for loop
             rad = 0.02 + azim / azim_range * norm_v # get radius, can be made into incrementation
             # find possible velocities? 
             new_v = [rad*cos(azim)*sin(zen), rad*sin(azim)*sin(zen), rad*cos(zen)]
             judgeSuitable(new_v, pA)
+            zen += step
+        azim += step
     new_v = vA[:]
     judgeSuitable(new_v, pA)
     #----------------------
